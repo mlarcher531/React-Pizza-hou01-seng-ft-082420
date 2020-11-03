@@ -36,7 +36,7 @@ class App extends Component {
     let pizzaObj = {
       topping: this.state.changePizza.topping,
       size: this.state.changePizza.size,
-      vegetarian: this.state.changePizza.vegatarian
+      vegetarian: this.state.changePizza.vegetarian
     }
     fetch(`http://localhost:3000/pizzas/${this.state.changePizza.id}`, {
       method: "PATCH",
@@ -47,10 +47,10 @@ class App extends Component {
       body: JSON.stringify({
         topping: pizzaObj.topping,
         size: pizzaObj.size,
-        vegetarian: pizzaObj.vegatarian
+        vegetarian: pizzaObj.vegetarian
       })
     })
-      .then(res => res.json)
+      .then(res => res.json())
       .then(edittedPizza => {
         this.setState({
           allPizza: this.state.allPizza.map(pizza => pizza.id === edittedPizza.id ? edittedPizza : pizza)

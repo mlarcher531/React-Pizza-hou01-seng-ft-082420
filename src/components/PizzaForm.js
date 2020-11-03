@@ -18,13 +18,13 @@ class PizzaForm extends React.Component {
         </div>
         <div className="col">
           <div className="form-check">
-            <input onChange={(e) => {this.props.handleChange(e)}}  name="vegetarian" className="form-check-input" type="radio" value="true" checked={null} />
+            <input onChange={(e) => {this.props.handleChange(e)}}  name="vegetarian" className="form-check-input" type="radio" value="true" checked={this.props.changePizza.vegetarian === true} />
             <label className="form-check-label">
               Vegetarian
             </label>
           </div>
           <div className="form-check">
-            <input onChange={(e) => {this.props.handleChange(e)}} name="vegetarian" className="form-check-input" type="radio" value="false" checked={null} />
+            <input onChange={(e) => {this.props.handleChange(e)}} name="vegetarian" className="form-check-input" type="radio" value="false" checked={this.props.changePizza.vegetarian === false} />
             <label className="form-check-label">
               Not Vegetarian
             </label>
